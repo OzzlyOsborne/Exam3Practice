@@ -136,7 +136,7 @@ def integers(sequence_of_sequences):
 def run_test_big_letters():
     """ Tests the    big_letters    function. """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # Done: 4. Implement this TEST function.
     #   It TESTS the  big_letters  function defined below.
     #   Include at least ** 1 ** ADDITIONAL test beyond those we wrote.
     # ------------------------------------------------------------------
@@ -174,8 +174,8 @@ def run_test_big_letters():
 
     #Test 2
 
-    expected = 'OTSSSOOPSAPSBOSCOPDOO'
-    answer = big_letters([])
+    expected = 'YEAHHAHAHABOI'
+    answer = big_letters(['YeahaEAHaHAHAHAha', 'BOiiI'])
     print('Expected is:', expected)
     print('Actual is:  ', answer)
 
@@ -209,7 +209,7 @@ def big_letters(sequence_of_sequences):
     Precondition:  the given argument is a sequence of sequences.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
     ####################################################################
@@ -231,6 +231,17 @@ def big_letters(sequence_of_sequences):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:  12 minutes.
     # ------------------------------------------------------------------
+
+    new_string = ''
+    for k in range(len(sequence_of_sequences)):
+        if type(sequence_of_sequences[k]) == str:
+            for j in range(len(sequence_of_sequences[k])):
+                if sequence_of_sequences[k][j].isupper():
+                    new_string += sequence_of_sequences[k][j]
+    return new_string
+
+
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
