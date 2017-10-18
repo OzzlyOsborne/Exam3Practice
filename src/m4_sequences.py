@@ -324,17 +324,20 @@ def practice_problem4c(points):
 
     new_point = 0
     mutates = 0
+    kval = 0
     for k in range(len(points)):
         if is_prime(points[k].x) and is_prime(points[k].y):
             x = points[k].x
             y = points[k].y
-            new_point = rg.Point(y,x)
+            points[k].x = y
+            points[k].y = x
+            kval = k
             mutates += 1
-            break;
-    if mutates > 0:
-        return new_point
+            break
+    if mutates != 0:
+        return points[kval]
     else:
-        return 'Not Found'
+        return 'Not found'
 
 
 def run_test_practice_problem4d():
