@@ -37,8 +37,8 @@ def main():
     """ Calls the   TEST   functions in this module. """
     # run_test_practice_problem4a()
     # run_test_practice_problem4b()
-    # run_test_practice_problem4c()
-    run_test_practice_problem4d()
+    run_test_practice_problem4c()
+    # run_test_practice_problem4d()
 
 
 def is_prime(n):
@@ -420,7 +420,7 @@ def practice_problem4d(sequence):
       :rtype: int
     """
     ####################################################################
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -432,15 +432,11 @@ def practice_problem4d(sequence):
     list = []
     total = 0
     for k in range(len(sequence)-1):
-        if is_prime(sequence[k+1]) and is_prime(sequence[k]):
-            for j in range(len(list)):
-                if list[j] == sequence[j]:
-                    count += 1
-            if count == 0:
+        if is_prime(sequence[k+1]) and is_prime(sequence[k]) :
+            if sequence[k+1] != sequence[k]:
                 list += [sequence[k]]
     for i in range(len(list)):
         total += list[i]
-    print(list)
     return total
 
 
