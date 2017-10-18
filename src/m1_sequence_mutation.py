@@ -45,8 +45,8 @@ def run_test_zero_changer():
     print('  Actual:  ', test2)
 
     # Test 3:
-    test3 = ([7,8], [1, 3], [4, 0, 2], [0, 0, 0], [6, 8, 9], (), (0,1,2))
-    expected3 = ([7,8], [1, 3], [4, 1, 2], [2, 3, 4], [6, 8, 9], (), (5,1,2))
+    test3 = ([7,8], [1, 3], [4, 0, 2], [0, 0, 0], [6, 8, 9], (), [0,1,2])
+    expected3 = ([7,8], [1, 3], [4, 1, 2], [2, 3, 4], [6, 8, 9], (), [5,1,2])
     zero_changer(test3)
     print()
     print('Test 3:')
@@ -79,7 +79,7 @@ def zero_changer(tuple_of_lists):
       :type tuple_of_lists: tuple of list[int]
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
@@ -92,17 +92,8 @@ def zero_changer(tuple_of_lists):
     for k in range(len(tuple_of_lists)):
         for j in range(len(tuple_of_lists[k])):
             if tuple_of_lists[k][j] == 0:
-                if type(tuple_of_lists[k]) == tuple:
-                    list1 = list(tuple_of_lists[k])
-                    list1[j] = zeros + 1
-                    list2 = list(tuple_of_lists)
-                    list2[k] = list1
-                    tuple_of_lists = list2
-                    zeros += 1
-                    print(list2)
-                else:
-                    tuple_of_lists[k][j] = zeros + 1
-                    zeros += 1
+                tuple_of_lists[k][j] = zeros + 1
+                zeros += 1
 
 
 
