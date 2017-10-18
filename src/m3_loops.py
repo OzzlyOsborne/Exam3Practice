@@ -135,6 +135,11 @@ def run_test_practice_problem3():
     #             that they are adequate tests!
     ####################################################################
 
+    #test 15
+
+
+    #test 16
+
 
 
 
@@ -210,7 +215,7 @@ def practice_problem3(start, n, threshold):
       :type threshold: float
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #          Some tests are already written for you (above),
     #          but you are required to write ADDITIONAL tests (above).
     ####################################################################
@@ -219,17 +224,15 @@ def practice_problem3(start, n, threshold):
     #    TIME ESTIMATE:   < 15 minutes.
     ####################################################################
 
-    list = []
-    if n == 0:
-        return []
-    if threshold > math.sqrt(2):
-        for _ in range(start+n-1):
-            list += start + 1
-    else:
-        for k in range(start, n):
-            if math.sin(k) + math.cos(k) >= threshold:
-                list += [k]
-    return  list
+    count = 0
+    val = start
+    newlist = []
+    while count != n:
+        if math.sin(val) + math.cos(val) > threshold:
+            newlist += [val]
+            count += 1
+        val += 1
+    return newlist
 
 
 # ----------------------------------------------------------------------
